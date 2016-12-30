@@ -3,6 +3,7 @@ package com.mairyu.app7;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final TextView txtStart = (TextView) findViewById(R.id.txtStart);
-        TextView txtI = (TextView) findViewById(R.id.txtI);
+        final TextView txtI = (TextView) findViewById(R.id.txtI);
         final TextView txtSwitch = (TextView) findViewById(R.id.txtSwitch);
 
         Button btnLoop = (Button) findViewById(R.id.btnLoop);
@@ -27,18 +28,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-/*                for (int i = 0; i <= 10; i++) {
-                    txtStart.setText(i + "");
-                }*/
+ /*           for (int i = 0; i <= 10; i++) {
+                txtStart.setText(i + "");
+            }*/
 
-                int i = 0;
+            int i = 0;
 
-                while (i <= 10) {
-                    txtStart.setText(i + "");
-                    i++;
-                }
+            while (i <= 10) {
+                txtStart.setText(i + "");
+                i++;
+            }
 
-                txtI.setText(i + "");
+            txtI.setText(i + "");
 
         /*        int y = 0;
 
@@ -56,16 +57,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String nameString = "Animal Name";
+/*            String nameString = "Animal Name";
 
-                switch (nameString){
+            switch (nameString) {
 
-                    case "Animal1":
-                        txtSwitch.setText("Our Animal Name is Animal 1");
-                        break;
-                    
+                case "Animal1":
+                    txtSwitch.setText("Our Animal Name is Animal 1");
+                    break;
+                default:
+                    txtSwitch.setText("BOOM");
+            }*/
+
+            for (int x = 0; x <= 10; x++) {
+
+                if (x == 5) {
+                    break;
                 }
+                Log.i("LOG", x + "");
+            }
+
             }
         });
-
+    }
 }
